@@ -57,6 +57,7 @@ public class MqConsumerConfig {
                     System.out.println(message);
                 });
                 //返回监听事务的状态枚举值
+                //ConsumeConcurrentlyStatus.CONSUME_SUCCESS 跟mq确认消息已经消费了，然后MQ将消息标记为已消费消息，从队列中移除。
                 //Fixme  ConsumeConcurrentlyStatus.RECONSUME_LATER消息的重复消费,CONSUME_SUCCESS消费成功；
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
